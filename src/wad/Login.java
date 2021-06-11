@@ -161,11 +161,9 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     String utype="";
-     User loggeduser;
+    User loggeduser;
     private void typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_typeActionPerformed
         // TODO add your handling code here:
-
-               
     }//GEN-LAST:event_typeActionPerformed
 
     
@@ -196,7 +194,7 @@ public class Login extends javax.swing.JFrame {
                     Home.loggeduser=loggeduser;
                     if(utypeid==1){
                         new Home().setVisible(true);
-                        login.dispose();
+                        this.dispose();
                     }else if(utypeid==2){
                         new ClientHome().setVisible(true);
                         this.dispose();

@@ -551,7 +551,7 @@ public class Home extends javax.swing.JFrame {
                   stockdao.add(new Cartitem(itemidd, Double.parseDouble(qty.getText()), price));
                   showlist();
                   qty.setText("");
-           JOptionPane.showMessageDialog(this, "Added!"); 
+//           JOptionPane.showMessageDialog(this, "Added!"); 
         }
         
     }//GEN-LAST:event_addbtnActionPerformed

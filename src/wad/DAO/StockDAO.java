@@ -45,6 +45,17 @@ public class StockDAO {
      }
     
     
+     public void deleteproduct(int id){
+	    String query="DELETE FROM product WHERE id = "+id;
+            try{
+                Statement stmt = Connection.getConnection().createStatement();
+                stmt.executeUpdate(query);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+     }
+    
+    
     public int getproductid(String name){
          String query="SELECT id FROM product where item_name='"+name+"'";
          int c = 0;
@@ -77,7 +88,19 @@ public class StockDAO {
             return c;
     }
     
+    public void reducestock(int id,double qty){
+        System.out.println(id);
+        String query="UPDATE stock SET qty=qty-"+qty+" WHERE itemid="+id; 
+        try{
+                Statement stmt = Connection.getConnection().createStatement();
+                stmt.executeUpdate(query);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+    }
+    
     public void add(Cartitem item){
+        reducestock(item.getitemid(),item.getqty());
         String query="INSERT INTO tempcart(itemid,qty,price) VALUES ("+item.getitemid()+","+item.getqty()+","+item.getunitprice()+")";
             try{
                 Statement stmt = Connection.getConnection().createStatement();

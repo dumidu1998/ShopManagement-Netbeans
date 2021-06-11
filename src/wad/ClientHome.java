@@ -520,12 +520,10 @@ public class ClientHome extends javax.swing.JFrame {
         if(qty.getText().isEmpty()){
             JOptionPane.showMessageDialog(this, "Data Error!");
         }else{
-            //            itemidd
-            //           items[i] = new Cartitem(itemidd, Double.parseDouble(qty.getText()), price);
             stockdao.add(new Cartitem(itemidd, Double.parseDouble(qty.getText()), price));
             showlist();
             qty.setText("");
-            JOptionPane.showMessageDialog(this, "Added!");
+//            JOptionPane.showMessageDialog(this, "Added!");
         }
 
     }//GEN-LAST:event_addbtnActionPerformed

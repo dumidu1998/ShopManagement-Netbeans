@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
+import wad.DAO.StockDAO;
 
 /**
  *
@@ -389,6 +390,9 @@ public final class Products extends javax.swing.JFrame {
     
     private void deletebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebtnActionPerformed
         // TODO add your handling code here:
+        new StockDAO().deleteproduct(selected_id);
+        JOptionPane.showMessageDialog(this, "Deleted Sucessfully");
+        viewproducts();
     }//GEN-LAST:event_deletebtnActionPerformed
 
     private void ptableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ptableMouseClicked
